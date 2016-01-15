@@ -3,8 +3,36 @@
 <head>
   <meta charset="UTF-8">
   <title>JQuery animation</title>
+  <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.11.3.min.js"></script>
+
+  <script>
+
+    //Fade in and fade out
+
+    $("document").ready(function(){
+
+
+      $("#fadeout").click(function(){
+        $(this).fadeOut();
+      })
+
+      $("#fadein").click(function() {
+        $("#fadeout").fadeIn();
+      })
+
+
+
+
+    });
+
+    //Slide toggle
+
+  </script>
+
+
 </head>
 <body>
 
-</body>
-</html>
+<p>Click here <span id="fadeout">to fade out the middle of this</span> paragraph</P>
+
+<button type="button" id="fadein">Fade in paragraph</button>
