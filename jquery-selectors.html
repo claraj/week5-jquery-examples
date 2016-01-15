@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>JQuery Selectors</title>
+
+  <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.11.3.min.js"></script>
+
+  <script>
+
+    $("document").ready(function(){
+
+      //Select element with id = "liststripes" and add
+      //the click function; the callback runs when the element
+      //is clicked.
+      $("#liststripes").click(function(){
+
+        //Select even elements and make them red
+        //Select odd elements and make them blue
+        $("li:even").css({"color" : "red"});
+        $("li:odd").css({"color" : "blue"});
+
+      });
+
+
+    });
+
+  </script>
+
+
+</head>
+
+
+
+<body>
+
+<h1>Heading</h1>
+
+<P>Here is a list.</P>
+
+<ul>
+  <li id="one">One</li>
+  <li id="two">Two</li>
+  <li id="three">Three</li>
+  <li id="four">Four</li>
+</ul>
+
+<button id="liststripes" type="button" onclick="listStripes()">Make list stripy</button>
+
+</body>
+</html>
