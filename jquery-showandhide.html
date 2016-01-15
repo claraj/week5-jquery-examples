@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>JQuery Show and Hide Elements</title>
+
+  <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.11.3.min.js"></script>
+
+  <script>
+
+    $("document").ready(function(){
+
+      //Select li elements with class=hideme" and add
+      //the click function; the callback runs when the element
+      //is clicked.
+      $("li.hideme").click(function(){
+        $(this).hide();   //Hide this element
+
+      });
+
+      //Call show function for list elements
+      $("#showlist").click(function(){
+        $("li.hideme").show();
+      });
+
+
+
+      $("li.toggleme").click(function(){
+        $(this).toggle();
+      });
+
+      $("#togglelist").click(function() {
+        $("li.toggleme").toggle();
+      })
+
+    });  //End of ready function
+
+  </script>
+
+
+</head>
+
+
+
+<body>
+
+<div id="showandhide">
+
+  <h1>Hide and Seek with show() and hide()</h1>
+
+  <P>Here is a list.</P>
+
+  <p>Click the list elements to hide them</p>
+  <ul>
+    <li class="hideme" id="one">One</li>
+    <li class="hideme" id="two">Two</li>
+    <li class="hideme" id="three">Three</li>
+    <li class="hideme" id="four">Four</li>
+  </ul>
+
+  <button id="showlist" type="button">Bring back the list elements</button>
+
+</div>
+
+
+<div id="toggle">
+
+  <h1>Hide and Seek with toggle()</h1>
+
+  <P>Here is another list.</P>
+
+  <p>Click the list elements to hide them</p>
+  <ul>
+    <li class="toggleme" id="i">I</li>
+    <li class="toggleme" id="ii">II</li>
+    <li class="toggleme" id="iii">III</li>
+    <li class="toggleme" id="iv">IV</li>
+  </ul>
+
+  <button id="togglelist" type="button">Toggle visibility of the list elements</button>
+
+</div>
+
+
+
+<P></P>
+
+</body>
+</html>
