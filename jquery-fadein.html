@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>JQuery animation</title>
+
+  <style>
+    td {
+      width : 40px;
+      height : 40px;
+      border-color: black;
+      border-width: 2px;
+      border-style: solid;
+      text-align: center;
+    }
+  </style>
+
+  <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.11.3.min.js"></script>
+
+  <script>
+
+    //Fade in and fade out.
+
+    $("document").ready(function(){
+
+      $("td").click(function() {
+        $(this).fadeOut(1000);
+
+        //Number is the milliseconds taken to fade out the component.
+        //It's optional, so this $(this).fadeOut(); works too
+
+      });
+
+      $("#fadeback").click(function() {
+        $("td").fadeIn(1000);
+
+      });
+
+    });
+
+  </script>
+
+
+</head>
+<body>
+
+  <table>
+    <tr><td>A</td><td>B</td></tr>
+    <tr><td>C</td><td>D</td></tr>
+  </table>
+
+  <button type="button" id="fadeback">Bring back boxes</button>
+
+</body>
+</html>
