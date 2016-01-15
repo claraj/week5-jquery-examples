@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>JQuery Toggling</title>
+
+  <style>
+
+    body {
+      background-color: goldenrod;
+    }
+
+    a {
+      background-color: inherit;   /*Inherit from parent, in this case, the body */
+      font-style: normal;
+    }
+
+    a.mouseover {
+      background-color: darkcyan ;
+      font-style : italic;
+
+    }
+
+  </style>
+
+  <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.11.3.min.js"></script>
+
+  <script>
+
+    $("document").ready(function(){
+
+      $("a").hover(
+        function(){
+          $(this).addClass("mouseover");
+        },
+        function() {
+          $(this).removeClass("mouseover");
+        }
+      );   //end of hover
+
+
+    });  //End of ready function
+
+  </script>
+
+
+</head>
+
+
+
+<body>
+
+<h1>Heading</h1>
+
+<p>Mouse over the links to change their style.
+
+<p>JQuery hover() reference is <a href="https://api.jquery.com/hover/">here</a></P>
+
+<a>Here is another link, to the <a href="http://www.w3schools.com/jquery/default.asp">W3Schools JQuery tutorial</a>.</P>
+<P></P>
+
+</body>
+</html>

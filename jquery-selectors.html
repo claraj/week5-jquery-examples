@@ -14,16 +14,27 @@
       //the click function; the callback runs when the element
       //is clicked.
       $("#liststripes").click(function(){
-
         //Select even elements and make them red
         //Select odd elements and make them blue
         $("li:even").css({"color" : "red"});
         $("li:odd").css({"color" : "blue"});
+      });
 
+      //Select p elements with class = hide.
+      //Hide them when they are clicked
+      $("p.hideme").click(function(){
+        $(this).hide();         // this does not need to be in quotes
+      });
+
+      $("p").click(function(){
+        $(this).css({
+          "color" : "blue",
+          "background-color" : "pink"
+        });
       });
 
 
-    });
+    });  //End of ready function
 
   </script>
 
@@ -38,6 +49,7 @@
 
 <P>Here is a list.</P>
 
+<p class="hideme">Click me to hide me.</p>
 <ul>
   <li id="one">One</li>
   <li id="two">Two</li>
@@ -46,6 +58,10 @@
 </ul>
 
 <button id="liststripes" type="button" onclick="listStripes()">Make list stripy</button>
+
+<p class="hideme">Click me to hide me too.</p>
+
+<P></P>
 
 </body>
 </html>
