@@ -16,6 +16,7 @@
 
   <p>Click me too</p>
 
+
   <script>
 
     //    This is the JQuery version
@@ -27,16 +28,22 @@
     //
     //    });
 
-    //Same logic in JavaScript. Placing script at end of the <body> tag
-    //so that it doesn't run until the body (and contained elements)
-    //has all loaded completely.
+    //Same logic in JavaScript. Note the event listener for the document
+    //ready event.
+    //http://stackoverflow.com/questions/436411/where-is-the-best-place-to-put-script-tags-in-html-markup
+    //http://stackoverflow.com/questions/9899372/pure-javascript-equivalent-to-jquerys-ready-how-to-call-a-function-when-the
 
-     var paras = document.getElementsByTagName("p");
+
+    document.addEventListener("DOMContentLoaded", myScript());
+
+    function myScript() {
+      var paras = document.getElementsByTagName("p");
       for (var p in paras) {
         paras[p].addEventListener("click", function () {
           this.style.visibility = "hidden";
         });
       }
+    }
 
   </script>
 </body>
