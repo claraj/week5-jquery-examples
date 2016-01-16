@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>JQuery animation</title>
+  <title>JQuery slideDown and slideUp animation</title>
 
   <style>
     td {
@@ -10,7 +10,10 @@
       height : 40px;
       border: 2px solid black;   /* Consolidate border properties */
       text-align: center;
-      background-color: aqua;
+      background-color: fuchsia;
+    }
+    button {
+      margin:15px
     }
   </style>
 
@@ -18,21 +21,18 @@
 
   <script>
 
-    //Fade in and fade out.
+    //slideDown and slideUp.
 
     $("document").ready(function(){
 
       $("td").click(function() {
+        //1000 is the milliseconds taken to fade out the component.
+        //It's optional, so this $(this).slideOut(); works too
         $(this).slideUp(1000);
-
-        //Number is the milliseconds taken to fade out the component.
-        //It's optional, so this $(this).fadeOut(); works too
-
       });
 
       $("#fadeback").click(function() {
-        $("td").slideDown(1000);
-
+        $("td").slideDown(1000);   //number parameter is optional
       });
 
     });
@@ -43,12 +43,15 @@
 </head>
 <body>
 
+<p>Click on the boxes to make them disappear </p>
+
   <table>
     <tr><td></td></tr>
     <tr><td></td></tr>
     <tr><td></td></tr>
     <tr><td></td></tr>
   </table>
+
 
   <button type="button" id="fadeback">Bring back boxes</button>
 

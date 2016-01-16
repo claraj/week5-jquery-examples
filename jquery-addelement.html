@@ -2,35 +2,33 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>JQuery animation</title>
+  <title>JQuery Adding Elements</title>
   <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.11.3.min.js"></script>
 
   <script>
 
-    //Fade in and fade out
-
     $("document").ready(function(){
 
+      //Add a click listener to the newitem button
       $("#newitem").click(function() {
-
-        //Add new list element
-
-        $("#add_items").append("<li>Hello</li>");
-
+        //Add new list element to the todo list
+        $("#todo").append("<li>Meow</li>");
       });
 
     });
 
   </script>
 
-
 </head>
 <body>
 
+  <h2>The cat's to do list</h2>
 
   <button type="button" id="newitem">Add list item</button>
 
-  <ul id="add_items"></ul>
+  <ul id="todo"></ul>
 
 </body>
 </html>
+
+
