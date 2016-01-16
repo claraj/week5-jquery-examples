@@ -17,20 +17,14 @@
 
   <script>
 
-    //Fade in and fade out.
-
     $("document").ready(function(){
 
       $("td").click(function() {
-        $(this).fadeOut(1000);
-
-        //Number is the milliseconds taken to fade out the component.
-        //It's optional, so this $(this).fadeOut(); works too
-
+        $(this).fadeOut();
       });
 
       $("#fadeback").click(function() {
-        $("td").fadeIn(1000);
+        $("td").fadeIn();    //Can optionally specify a time in ms e.g. fadeIn(1500);
 
       });
 
