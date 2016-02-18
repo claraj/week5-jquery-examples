@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>JQuery Adding Elements</title>
+  <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.11.3.min.js"></script>
+
+  <script>
+
+    //Typical JQuery - when document is ready, run this function
+    //$("document").ready(function(){
+    //You write that every time - but there's a shortcut!
+    //   $(function() ... callback .... )
+    //does the same thing.
+
+    $(function() {
+      //Add a click listener to the newitem button
+      $("#newitem").click(function() {
+        //Add new list element to the todo list
+        $("#todo").append("<li>Meow</li>");
+      });
+
+    });
+
+
+  </script>
+
+</head>
+<body>
+
+  <h2>The cat's to do list</h2>
+
+  <button type="button" id="newitem">Add list item</button>
+
+  <ul id="todo"></ul>
+
+</body>
+</html>
+
+
