@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>JQuery Adding Elements</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
+</head>
+<body>
+
+  <h2>The cat's to do list</h2>
+
+  <button type="button" id="new_item">Add list item</button>
+
+  <ul id="todo"></ul>
+
+  <script>
+
+    $(function() {
+      //Add a click listener to the new_item button
+      $("#new_item").click(function() {
+        //Add new list element to the cat's to do list
+        $("#todo").append("<li>Meow</li>");
+      });
+    });
+
+  </script>
+
+</body>
+</html>
+
+

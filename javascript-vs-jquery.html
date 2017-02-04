@@ -21,32 +21,26 @@
 
     //    This is the JQuery version
     //
-    //    $(document).ready(function(){
-    //      $("p").click(function() {
-    //        $(this).hide();
-    //      });
-    //
-    //    });
+    //        $(document).ready(function(){
+    //          $("p").click(function() {
+    //            $(this).hide();
+    //          });
+    //        });
 
     //Same logic in JavaScript. Note the event listener for the document
     //ready event.
-    //http://stackoverflow.com/questions/436411/where-is-the-best-place-to-put-script-tags-in-html-markup
     //http://stackoverflow.com/questions/9899372/pure-javascript-equivalent-to-jquerys-ready-how-to-call-a-function-when-the
 
+    document.addEventListener("DOMContentLoaded", function() {
 
-    document.addEventListener("DOMContentLoaded", myScript());
-
-    function myScript() {
       var paras = document.getElementsByTagName("p");
       for (var p in paras) {
         paras[p].addEventListener("click", function () {
           this.style.visibility = "hidden";
         });
       }
+    });
 
-
-
-    }
 
   </script>
 </body>
