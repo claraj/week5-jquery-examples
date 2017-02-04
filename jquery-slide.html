@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <title>JQuery slideDown and slideUp animation</title>
-
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 
   <style>
     td {
@@ -18,39 +18,37 @@
     }
   </style>
 
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+</head>
+<body>
+
+  <p>Click on the boxes to make them disappear </p>
+
+  <table>
+    <tr><td>A</td></tr>
+    <tr><td>B</td></tr>
+    <tr><td>C</td></tr>
+    <tr><td>D</td></tr>
+  </table>
+
+  <button type="button" id="fade_back">Bring back boxes</button>
+
   <script>
 
-    $("document").ready(function(){
+    $(function(){
 
       $("td").click(function() {
-        //1000 is the milliseconds taken to fade out the component.
-        //It's optional, so this $(this).slideOut(); works too
+        //1000 is the time in ms taken to fade out the element.
+        //It's optional, so this $(this).slideUp(); works too
         $(this).slideUp(1000);
       });
 
-      $("#fadeback").click(function() {
+      $("#fade_back").click(function() {
         $("td").slideDown(1000);   //number parameter is optional
       });
 
     });
 
   </script>
-
-</head>
-<body>
-
-<p>Click on the boxes to make them disappear </p>
-
-  <table>
-    <tr><td></td></tr>
-    <tr><td></td></tr>
-    <tr><td></td></tr>
-    <tr><td></td></tr>
-  </table>
-
-  <button type="button" id="fadeback">Bring back boxes</button>
-
 </body>
 
 </html>

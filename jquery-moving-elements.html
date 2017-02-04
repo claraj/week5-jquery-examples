@@ -3,7 +3,10 @@
 <head>
   <meta charset="UTF-8">
   <title>Moving an element</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
 </head>
+
 <body>
 
 <h2>First List</h2>
@@ -15,7 +18,6 @@
 
 <button type="button" id="first_to_second">Move last element to second list</button>
 
-
 <h2>Second List</h2>
 <ul id="second_list">
   <li>D</li>
@@ -25,12 +27,9 @@
 
 <button type="button" id="second_to_first">Move last element to first list</button>
 
-
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-
 <script>
 
-  $(document).ready(function(){
+  $(function(){
 
     $("#first_to_second").click(function() {
       move("#first_list", "#second_list");
@@ -44,25 +43,27 @@
 
   function move(origin, dest) {
 
-    //move last of list identified by first selector
+    //move last element of list identified by first selector
     //to list identified by second selector
 
+    // Select the origin list, and find all li elements
     var originListElements = $(origin).find("li");
 
+    //If origin list has no elements, return
     if (originListElements.length == 0) {
-      //origin list has no elements, so return
       return;
     }
 
-    //Otherwise, identify last element
-    var originLi = originListElements.last();
+    //Otherwise, identify last element; save in lastElement
+    var lastElement = originListElements.last();
 
     //Identify destination list
-    var destList = $(dest);
+    var destinationList = $(dest);
 
-    //Add last element of origin to destinaton. In effect, this *moves* the element.
-    //If a copy was needed, there is a copy() method.
-    destList.append(originLi);
+    //Add last element of originList to destination list.
+    //Since there's only one of this element, it must be removed
+    //from the origin list. So, the effect is to MOVE the element.
+    destinationList.append(lastElement);
 
   }
 

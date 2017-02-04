@@ -6,31 +6,7 @@
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 
-  <script>
-
-    $("document").ready(function(){
-
-      $("p").css({
-        "color" : "blue",
-        "background-color" : "lightgreen"
-      });
-
-      //Select even <li> elements and make them red
-      $("li:even").css({"color" : "red", "font-weight" : "bold"});
-      //Select odd <li> elements and make them blue
-      $("li:odd").css({"color" : "blue", "font-weight" : "bold"});
-
-      //Center-align h1 elements
-      $("h1").css({"text-align":"center"});
-
-    });  //End of ready function
-
-  </script>
-
-
 </head>
-
-
 
 <body>
 
@@ -47,5 +23,27 @@
 
 <p>I'm a paragraph</p>
 
+<script>
+
+  $("document").ready(function(){
+
+    /* All of this runs when the document loads. */
+
+    $("p").css({
+      "color" : "blue",
+      "background-color" : "lightgreen"
+    });
+
+    //Select even <li> elements and make them red
+    $("li:even").css({"color" : "red", "font-weight" : "bold"});
+    //Select odd <li> elements and make them blue
+    $("li:odd").css({"color" : "blue", "font-weight" : "bold"});
+
+    //Center-align h1 elements
+    $("h1").css({"text-align":"center"});
+
+  });  //End of ready function
+
+</script>
 </body>
 </html>

@@ -33,10 +33,11 @@
     // So, you are specifying what to do when the click even happens
     // (Multi-line is more common - see all the other examples)
 
-    $("p").click(function() { alert("You clicked " + $(this).text()); }  );
+  //  $("p").click(function() { alert("You clicked " + $(this).text()); }  );
 
     //Note that jQuery adds an individual click event handler to each element
     //that the $("p") selector returns.
+
 
 
     /*
@@ -44,10 +45,11 @@
      //This is the same code as above; but on multiple lines - more readable
 
      $("p").click(function() {
-     alert("You clicked " + $(this).text());
+       alert("You clicked " + $(this).text());
      });
 
-     */
+    */
+
 
 
     /*
@@ -57,10 +59,10 @@
      $("p").click(alertFunction); //Use the function's name, no parenthesis ()
 
      function alertFunction() {
-     alert("You clicked on a paragraph");
+       alert("You clicked " + $(this).text());
      }
-     */
 
+      */
 
   });  //End of ready function call
 

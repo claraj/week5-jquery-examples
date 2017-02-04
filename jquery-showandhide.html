@@ -3,46 +3,12 @@
 <head>
   <meta charset="UTF-8">
   <title>JQuery Show and Hide Elements</title>
-
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-
-  <script>
-
-    $("document").ready(function(){
-
-      //Select li elements with class=hideme" and add
-      //the click function; the callback runs when the element
-      //is clicked.
-      $("li.hideme").click(function(){
-        $(this).hide();   //Hide this element
-      });
-
-      //Call show function for list elements
-      $("#showlist").click(function(){
-        $("li.hideme").show();
-      });
-
-
-      $("li.toggleme").click(function(){
-        $(this).toggle();
-      });
-
-      $("#togglelist").click(function() {
-        $("li.toggleme").toggle();
-      })
-
-    });  //End of ready function
-
-  </script>
-
-
 </head>
-
-
 
 <body>
 
-<div id="showandhide">
+<div id="show_and_hide">
 
   <h1>Hide and Seek with show() and hide()</h1>
 
@@ -50,13 +16,13 @@
 
   <p>Click the list elements to hide them</p>
   <ul>
-    <li class="hideme" id="one">One</li>
-    <li class="hideme" id="two">Two</li>
-    <li class="hideme" id="three">Three</li>
-    <li class="hideme" id="four">Four</li>
+    <li class="hide_me" id="one">One</li>
+    <li class="hide_me" id="two">Two</li>
+    <li class="hide_me" id="three">Three</li>
+    <li class="hide_me" id="four">Four</li>
   </ul>
 
-  <button id="showlist" type="button">Bring back the list elements</button>
+  <button id="show_list" type="button">Bring back the list elements</button>
 
 </div>
 
@@ -68,20 +34,53 @@
   <P>Here is another list.</P>
 
   <p>Click the list elements to hide them</p>
+
+  <p>Click the button to hide the visible elements and show the invisible ones</p>
+
   <ul>
-    <li class="toggleme" id="i">I</li>
-    <li class="toggleme" id="ii">II</li>
-    <li class="toggleme" id="iii">III</li>
-    <li class="toggleme" id="iv">IV</li>
+    <li class="toggle_me" id="i">I</li>
+    <li class="toggle_me" id="ii">II</li>
+    <li class="toggle_me" id="iii">III</li>
+    <li class="toggle_me" id="iv">IV</li>
   </ul>
 
-  <button id="togglelist" type="button">Toggle visibility of the list elements</button>
+  <button id="toggle_list" type="button">Toggle visibility</button>
 
 </div>
 
 
+<script>
 
-<P></P>
+  $(function(){
+
+    // Show and hide
+
+    //Select li elements with class=hide_me" and add
+    //the click function; the callback runs when the element
+    //is clicked.
+    $("li.hide_me").click(function(){
+      $(this).hide();   //Hide this element
+    });
+
+    //Click listener for show_list button
+    //Select li.hide_me elements and call show function
+    $("#show_list").click(function(){
+      $("li.hide_me").show();
+    });
+
+
+
+    $("li.toggle_me").click(function(){
+      $(this).toggle();
+    });
+
+    $("#toggle_list").click(function() {
+      $("li.toggle_me").toggle();
+    })
+
+  });  //End of ready function
+
+</script>
 
 </body>
 </html>
