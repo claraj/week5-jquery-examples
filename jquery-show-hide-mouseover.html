@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>JQuery Toggling Classes</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
+
+  <style>
+
+
+
+    .hidden {
+      opacity: 0;
+    }
+  </style>
+</head>
+
+<body>
+
+<h3>Hiding elements on mouseover</h3>
+
+<p class="hide">Mouse over this text to hide it.</p>
+<p class="hide">Mouse over this text to hide it.</p>
+<p>This text won't go when you mouse over it</p>
+
+
+<script>
+
+  $(function(){
+
+
+    $(".hide").hover(
+
+      function() {
+        $(this).addClass("hidden");
+      }
+    ,
+
+      function() {
+        $(this).removeClass("hidden");
+      });
+
+
+  });  //End of ready function
+
+</script>
+
+</body>
+</html>
+
