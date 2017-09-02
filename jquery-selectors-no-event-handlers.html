@@ -12,6 +12,9 @@
 
 <h1>This is a H1 element, it should be centered</h1>
 
+<h3>All of the styles were applied by JQuery when the document loaded.
+  There are no event handlers in this example.</h3>
+
 <p>I'm a paragraph. A list follows.</p>
 
 <ul>
@@ -21,13 +24,14 @@
   <li id="four">Four</li>
 </ul>
 
-<p>I'm a paragraph</p>
+<p>I'm a paragraph too</p>
 
 <script>
 
   $("document").ready(function(){
 
-    /* All of this runs when the document loads. */
+    /* All of this runs when the document loads.
+     * Use any of the regular CSS selectors. Note the key:value syntax. */
 
     $("p").css({
       "color" : "blue",
@@ -41,6 +45,9 @@
 
     //Center-align h1 elements
     $("h1").css({"text-align":"center"});
+
+    // Change background color
+    $("h3").css({"background-color":"cyan", "font-family":"monospace"});
 
   });  //End of ready function
 

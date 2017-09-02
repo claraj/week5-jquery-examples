@@ -10,9 +10,10 @@
 
   <h2>Cat to do list</h2>
 
-  <button type="button" id="append_item">Add item to end of list</button>
-  <button type="button" id="prepend_item">Add item to start of list</button>
-  <button type="button" id="prepend_item_to">Add item to start of list</button>
+  <button type="button" id="append_item">Add item to end of list with append</button>
+  <button type="button" id="append_item_to">Append item to end of list with appendTo</button>
+  <button type="button" id="prepend_item">Add item to start of list with prepend</button>
+  <button type="button" id="prepend_item_to">Add item to start of list with prependTo</button>
 
   <ul id="to_do"></ul>
 
@@ -26,18 +27,23 @@
         $("#to_do").append("<li>Meow</li>");
       });
 
+      // Create li item, append it to the #to_do list element
+      $("#append_item_to").click(function () {
+        $("<li>Meow meow</li>").appendTo("#to_do");
+      });
+
       // Create li element, ask parent to prepend this new element. Use prepend()
       // Element added as the first child of the #to_do list element
       $("#prepend_item").click(function () {
-        $("#to_do").prepend("<li>Meow (urgent)</li>");
+        $("#to_do").prepend("<li>Meow (right now)</li>");
       });
 
       // Alternative - Create li element, li attaches itself to parent
       // Does same as above. Notice this uses prependTo() function
       $("#prepend_item_to").click(function () {
-        ("<li>Meow (urgent)</li>").prependTo($("#to_do"));
+        var newItem = $("<li>Meow (important)</li>"); // Create new element
+        newItem.prependTo($("#to_do"));   // prepend it to the #to_do list
       });
-
 
     });
 

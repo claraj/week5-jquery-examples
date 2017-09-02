@@ -30,9 +30,10 @@
       });
 
 
-      //Add doubleclick listener. Again, change this element's style
+      //Add double click listener. Again, change this element's style
       $("h1").dblclick(function(){
-        $(this).css({"text-align":"center"});
+        $(this).css({"text-align":"center"});           // Change style
+        $(this).text("Centered after double click");   // Change text
       })
 
 

@@ -12,7 +12,7 @@
 
   <h2>Enter To Do Task</h2>
 
-<form>
+<form id="task_entry_form">
   <label for="task">What do you need to do?</label>
   <input type="text" id="task"> <br>
 
@@ -22,31 +22,74 @@
   <label for="ready">Are you ready to do it?</label>
   <input type="checkbox" id="ready"> <br>
 
-  <button type="button" id="submit_button">Submit</button>
+  <!-- A button that sends data to a server will be type='submit'.
+  For a form that will be processed with JavaScript first, you can set type to 'button' -->
+
+  <button type="button" id="submit_button">Add task</button>   <!-- Submit form button -->
+
 </form>
+
+
+  <h2>Task list here</h2>
+  <ul id="task_list">
+
+  </ul>
+
 
   <script>
 
     $(function(){
 
+      // When form loads, set the due date input value to today. This is plain JavaScript
+      document.getElementById("due").valueAsDate = new Date();
+
+
+      // Event handler for the form submit button
       $("#submit_button").click(function() {
 
-        var task = $('#task').val();     // The text
-        var isReady = $('#ready').prop('checked');   // Read the checked attribute
-        var dueDate = $('#due').val();   //  A string, e.g "2017-03-20"
 
-        if (task.length == 0 || dueDate.length == 0) {  //Validation
-          alert('Please fill out all of the form')
+        // Select the three form elements
+        var taskEl = $('#task');
+        var dueDateEl = $('#due');
+        var isReadyEl = $('#ready');
+
+
+        // Read data from the form elements
+
+        var task = taskEl.val();     // The text of the taskEl input element
+        var dueDate = dueDateEl.val();   //  A string, e.g "2017-03-20"
+        var isReady = isReadyEl.prop('checked');   // Read the checked property.
+
+
+        // Just for debugging
+        console.log('Task is ', task);
+        console.log('Due date is ', dueDate);
+        console.log('Due date is ', dueDateEl.prop('valueAsDate'));
+        console.log('ready?', isReady);
+
+        // Validation - error message and return if one or both of the task and due date fields aren't filled in
+
+        if (task.length === 0 || dueDate.length == 0) {
+          // Show error message
+          alert("Please enter a task and a date");
+          return;
         }
 
-        else {           //Process the data entered
-          if (isReady) {
-            alert("Ready for " + task + " due on " + dueDate + "!");
-          }
-          else {
-            alert("Not ready for " + task + " due on " + dueDate);
-          }
+        // Process the data somehow. For this example, append it to the ul task_list
+        if (isReady) {
+            $("#task_list").append("<li>Ready for " + task + " due on " + dueDate + "!</li>");
         }
+        else {
+          $("#task_list").append("<li>" + task + " due on " + dueDate + " (Not ready)</li>")
+        }
+
+        // Reset the form fields to their default values, ready for the next task
+
+        taskEl.val("");
+        isReadyEl.prop("checked", false);
+        document.getElementById("due").valueAsDate = new Date();
+
+
       });
     });
 
