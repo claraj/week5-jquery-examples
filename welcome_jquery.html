@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Welcome</title>
+
+  <link href="https://fonts.googleapis.com/css?family=Libre+Baskerville" rel="stylesheet">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
+
+  <style>
+
+    body {
+      font-family: 'Libre Baskerville', serif;
+    }
+
+    h1 {
+      color: red;
+      text-align: center;
+
+      width: 70%;
+      height: 70%;
+      position: absolute;
+      top:0;
+      bottom:0;
+      left:0;
+      right:0;
+      margin: auto;
+
+    }
+
+    #content {
+      width: 80%;
+      height: 80%;
+      position: absolute;
+      top:0;
+      bottom:0;
+      left:0;
+      right:0;
+      margin: auto;
+      display: none;   /* Initially hide content, JQuery may take a noticeable time to load */
+    }
+
+
+  </style>
+
+
+</head>
+
+<body>
+
+<h1 id="page_title">Welcome to this Website!</h1>
+
+<div id="content">
+  Content here. It's often helpful to have placeholder text, and Lorem Ipsum Generators are useful for creating blocks of fake text.
+  "Lorem Impsum" the name for fake latin-looking text. Try <a href="http://www.lipsum.com/">http://www.lipsum.com/</a> or one of the many
+  <a href="https://www.shopify.com/partners/blog/79940998-15-funny-lorem-ipsum-generators-to-shake-up-your-design-mockups">themed Lorem Ipsum generators</a>,
+  such as <a href="http://www.cupcakeipsum.com/"></a>http://www.cupcakeipsum.com/</a>.
+
+
+  <P>Cupcake ipsum dolor. Sit amet jelly-o marshmallow halvah jujubes dessert. Topping sugar plum fruitcake.</P>
+  <P>Cookie oat cake lollipop marzipan. Pudding topping jelly beans caramels toffee sesame snaps. Cookie brownie croissant croissant ice cream gingerbread jelly beans soufflé.</P>
+  <P>Pudding sweet liquorice topping donut. Cookie lollipop tiramisu apple pie marshmallow jelly-o chupa chups fruitcake macaroon. Wafer bonbon cake soufflé croissant. Muffin dragée candy jelly beans bonbon gummies.</P>
+  <P>Wafer topping bear claw croissant sugar plum lollipop bonbon lollipop jelly. Cake ice cream soufflé cheesecake liquorice dragée caramels. Jelly jelly powder. Powder tootsie roll tiramisu sugar plum cupcake muffin pudding.</P>
+  <P>Toffee marshmallow bear claw. Tiramisu cheesecake toffee cotton candy powder chocolate bar. Tart brownie sweet. Bonbon macaroon liquorice bear claw bear claw.</P>
+</div>
+
+
+<script>
+
+  // Wait 2 seconds then fade out the title, fade in the content
+
+  $(function(){
+
+    $('#page_title')
+      .delay(2000)
+      .fadeOut(2000, function(){
+        $('#content').fadeIn(2000);
+    });
+  });
+
+
+</script>
+
+</body>
+</html>

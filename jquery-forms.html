@@ -47,30 +47,23 @@
       // Event handler for the form submit button
       $("#submit_button").click(function() {
 
-
         // Select the three form elements
         var taskEl = $('#task');
         var dueDateEl = $('#due');
         var isReadyEl = $('#ready');
 
-
         // Read data from the form elements
-
         var task = taskEl.val();     // The text of the taskEl input element
         var dueDate = dueDateEl.val();   //  A string, e.g "2017-03-20"
         var isReady = isReadyEl.prop('checked');   // Read the checked property.
-
 
         // Just for debugging
         console.log('Task is ', task);
         console.log('Due date is ', dueDate);
         console.log('Due date is ', dueDateEl.prop('valueAsDate'));
         console.log('ready?', isReady);
-
         // Validation - error message and return if one or both of the task and due date fields aren't filled in
-
         if (task.length === 0 || dueDate.length == 0) {
-          // Show error message
           alert("Please enter a task and a date");
           return;
         }
@@ -88,8 +81,6 @@
         taskEl.val("");
         isReadyEl.prop("checked", false);
         document.getElementById("due").valueAsDate = new Date();
-
-
       });
     });
 
