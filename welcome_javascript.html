@@ -51,11 +51,12 @@
 <h1 id="page_title">Welcome to this Website!</h1>
 
 <div id="content">
-  Content here. It's often helpful to have placeholder text, and Lorem Ipsum Generators are useful for creating blocks of fake text.
+
+  <P>Content here. It's often helpful to have placeholder text, and Lorem Ipsum Generators are useful for creating blocks of fake text.
   "Lorem Impsum" the name for fake latin-looking text. Try <a href="http://www.lipsum.com/">http://www.lipsum.com/</a> or one of the many
   <a href="https://www.shopify.com/partners/blog/79940998-15-funny-lorem-ipsum-generators-to-shake-up-your-design-mockups">themed Lorem Ipsum generators</a>,
   such as <a href="http://www.cupcakeipsum.com/"></a>http://www.cupcakeipsum.com/</a>.
-
+  </P>
 
   <P>Cupcake ipsum dolor. Sit amet jelly-o marshmallow halvah jujubes dessert. Topping sugar plum fruitcake.</P>
   <P>Cookie oat cake lollipop marzipan. Pudding topping jelly beans caramels toffee sesame snaps. Cookie brownie croissant croissant ice cream gingerbread jelly beans soufflé.</P>
@@ -75,13 +76,11 @@
   content.style.opacity = 0;
 
   // Wait 2 seconds then fade out the title, fade in the content
-
   setTimeout(function(){
     fade(title, 2000, "out", function(){
       fade(content, 2000, "in");
     });
   }, 2000);
-
 
   /* Fade element in or out. Will always take time milliseconds. Works by adjusting the opacity, so if element
   * is already half-opaque, it will fade to the target in half the time, and the rest of the time will have no effect.*/
@@ -94,9 +93,7 @@
     var totalChanges = time/intervalLength;   // How many changes will that be? Used to stop modifying element
     var changesMade = 0;
 
-    if (out == "out") {
-      change = -change;
-    }
+    if (out == "out") { change = -change; }
 
     var faderId = setInterval(function(){
 
