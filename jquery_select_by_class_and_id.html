@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>JQuery Selectors</title>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
+</head>
+
+<body>
+
+
+<h1>Here is a list.</h1>
+
+<ul>
+  <li>One</li>
+  <li class="important">Two</li>
+  <li class="important">Three</li>
+  <li>Four</li>
+</ul>
+
+
+<h1>Here are some paragraphs.</h1>
+
+<P>All of the class=important elements should be red.</P>
+
+<P id="hide_me">Bye! I'm fading away.</P>
+
+<P class="important">You should see this paragraph.
+  For some reason, it's important.</P>
+
+<P>Here is another paragraph.</P>
+
+<script>
+
+  $(function() {
+
+    // Select by tag name, in this example, H1
+    // This runs on document load
+    $('h1').css({ background: 'aqua' });
+
+    // Select all the class = important elements
+    $('.important').css( { color : 'red' });
+
+    // Select the element with id = hide_me
+    $('#hide_me').fadeOut(7000);
+
+  });   // End of document ready callback
+
+</script>
+
+
+
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>JQuery Selectors</title>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
+</head>
+
+<body>
+
+
+<h1>Here is a list. Click the items.</h1>
+
+<ul>
+  <li>One</li>
+  <li>Two</li>
+  <li>Three</li>
+  <li>Four</li>
+</ul>
+
+<P>You won't see this on the page.</P>
+
+<P>You won't see this either!</P>
+
+<script>
+
+  $(function() {
+
+    // Select all <li> and immediately change their style
+    // This runs on document load
+    $('li').css({ background: 'aqua' });
+
+    // Select all the p elements and hide them
+    $('p').hide();
+
+    // Select all <li> and add a listener to change their style
+    // individually when clicked
+    $('li').click(function(){
+      $(this).css( {background: 'purple', color: 'white'} );
+    })
+
+  });   // End of document ready callback
+
+</script>
+
+
+
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>HTML</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
+</head>
+<p>
+
+
+<p>This is a paragraph</p>
+<p>This is a paragraph</p>
+<p>This is a paragraph</p>
+<p>This is a paragraph</p>
+
+<ul>
+  <li class="bird">Penguin</li>
+  <li class="dog">Labrador</li>
+  <li class="bird">Owl</li>
+</ul>
+
+<P>There are <span id="p_count"></span> paragraph elements</p>
+<p>There are <span id="bird_count"></span> elements with class=bird</p>
+
+<script>
+
+  $(function(){
+
+    var para_count = $('p').length;
+    var bird_count  = $('.bird').length;
+
+    $('#p_count').html(para_count);
+    $('#bird_count').html(bird_count);
+
+  });
+
+</script>
+
+</body>
+</html>
+
